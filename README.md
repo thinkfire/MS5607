@@ -1,2 +1,2 @@
-#<b> ms5607 </b>
+#MS5607
 I2C based Pressure sensor library for Arduino
