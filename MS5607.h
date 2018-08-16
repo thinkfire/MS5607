@@ -20,7 +20,7 @@ class MS5607
     MS5607();
     char begin();
     char resetDevice(void);
-    //char startMeasurment(void);
+    char startMeasurment(void);
 
 
   private:
