@@ -21,18 +21,21 @@ class MS5607
     char begin();
     char resetDevice(void);
     char startMeasurment(void);
+    char readDigitalValue(void);
 
 
   private:
-    double C1,C2,C3,C4,C5,C6;
+    unsigned int C1,C2,C3,C4,C5,C6;
+    unsigned long DP, DT;
+    long dT, TEMP;
+    double OFF, SENS, P;
 
     char readCalibration();
 
-    char readUInt(char address, double &value);
+    char readUInt_16(char address, unsigned int &value);
+
+    char readUint_32(char address, long &value);
 
     char readBytes(unsigned char *values, char length);
-
-
-
 
 };
