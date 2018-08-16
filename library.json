@@ -16,7 +16,4 @@
 	"version": "1.0.0",
 	"frameworks": "arduino",
 	"platforms": "*",
-	"examples": [
-		"/Examples/ms5607_test/src/main.cpp"
-	]
 }
