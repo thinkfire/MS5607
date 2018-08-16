@@ -59,6 +59,7 @@ char MS5607::readUInt_32(char address, unsigned long &value)
 {
   unsigned char data[3];	//4bit
 	data[0] = address;
+  data[1] = R_ADC;
   Serial.println("readUInt_32 started");
 	if (readBytes(data,3))
 	{
@@ -71,15 +72,15 @@ char MS5607::readUInt_32(char address, unsigned long &value)
 	return(0);
 }
 
-
-
-
 char MS5607::readBytes(unsigned char *values, char length)
 {
 	char x;
 
 	Wire.beginTransmission(MS5607_ADDR);
 	Wire.write(values[0]);
+  if(length>2){
+    Wire.write(values[1]);
+  }
 	char error = Wire.endTransmission();
 	if (error == 0)
 	{
