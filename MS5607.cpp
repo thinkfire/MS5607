@@ -59,7 +59,7 @@ char MS5607::readBytes(unsigned char *values, char length)
 {
 	char x;
 
-	Wire.beginTransmission(BMP280_ADDR);
+	Wire.beginTransmission(MS5607_ADDR);
 	Wire.write(values[0]);
 	error = Wire.endTransmission();
 	if (error == 0)
