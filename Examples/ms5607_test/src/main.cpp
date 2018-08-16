@@ -16,7 +16,7 @@ void setup() {
 
 void loop() {
   if(P_SENS.startMeasurment()){
-    Serial.print(ADC read successful!);
+    Serial.println("ADC read successful!");
   }else{ErrorLoop();}
   delay(5000);
 }
