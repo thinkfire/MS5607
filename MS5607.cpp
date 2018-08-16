@@ -32,12 +32,12 @@ char MS5607::readCalibration()
     readUInt_16(PROM_READ+2*5, C5) &&
     readUInt_16(PROM_READ+2*6, C6)
   ){
-    Serial.println(C1,2);
-    Serial.println(C2,2);
-    Serial.println(C3,2);
-    Serial.println(C4,2);
-    Serial.println(C5,2);
-    Serial.println(C6,2);
+    Serial.println(C1);
+    Serial.println(C2);
+    Serial.println(C3);
+    Serial.println(C4);
+    Serial.println(C5);
+    Serial.println(C6);
     return (1);
   }else{return(0);}
 }
