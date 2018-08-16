@@ -116,7 +116,7 @@ char MS5607::startMeasurment(void){
 
 
 char MS5607::readDigitalValue(void){
-    if(readUInt_32(char(CONV_D1), DP) && readUInt_32(char(CONV_D2), DT)){
+    if(readUInt_32(CONV_D1, DP) && readUInt_32(CONV_D2, DT)){
       Serial.println(DP);
       Serial.println(DT);
       return(1);
