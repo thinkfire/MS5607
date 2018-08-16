@@ -66,7 +66,7 @@ char MS5607::readUInt_32(char address, unsigned long &value)
     Serial.println("inside readUInt_32");
 		return(1);
 	}
-  serial.println("readUInt_32 failed");
+  Serial.println("readUInt_32 failed");
 	value = 0;
 	return(0);
 }
