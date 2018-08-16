@@ -10,7 +10,7 @@
 
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/thinkfire/ms5607.git"
+		"url": "https://github.com/thinkfire/MS5607.git"
 	},
 
 	"dependencies": {
