@@ -85,3 +85,13 @@ char MS5607::resetDevice(void){
     return(1);
   }else{return(0);}
 }
+
+char MS5607::startMeasurment(void){
+  Wire.beginTransmission(MS5607_ADDR);
+  Wire.write(R_ADC);
+  char error = Wire.endTransmission();
+  if(error == 0){
+    delay(10);
+    return(1);
+  }else{return(0);}
+}
