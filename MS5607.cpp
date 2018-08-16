@@ -59,11 +59,14 @@ char MS5607::readUInt_32(char address, unsigned long &value)
 {
   unsigned char data[3];	//4bit
 	data[0] = address;
+  Serial.println("readUInt_32 started");
 	if (readBytes(data,3))
 	{
 		value = (((unsigned long)data[2]<<16)|(unsigned long)data[1]<<8|(unsigned long)data[0]);
+    Serial.println("inside readUInt_32");
 		return(1);
 	}
+  serial.println("readUInt_32 failed");
 	value = 0;
 	return(0);
 }
