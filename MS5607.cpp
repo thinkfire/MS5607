@@ -64,7 +64,7 @@ char MS5607::readBytes(unsigned char *values, char length)
 	char error = Wire.endTransmission();
 	if (error == 0)
 	{
-		Wire.requestFrom(MS5607MS5607_ADDR,length);
+		Wire.requestFrom(MS5607_ADDR,length);
 		while(Wire.available() != length) ; // wait until bytes are ready
 		for(x=0;x<length;x++)
 		{
