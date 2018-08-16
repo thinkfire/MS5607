@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#include "../lib/MS5607.h"
+#include <MS5607.h>
 #include <Wire.h>
 
 MS5607 P_SENS;
