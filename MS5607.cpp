@@ -55,13 +55,13 @@ char MS5607::readUInt_16(char address, unsigned int &value)
 	return(0);
 }
 
-char MS5607::readUInt_32(char address, long &value)
+char MS5607::readUInt_32(char address, unsigned long &value)
 {
   unsigned char data[3];	//4bit
 	data[0] = address;
 	if (readBytes(data,3))
 	{
-		value = (((long)data[2]<<16)|(long)data[1]<<8|(long)data[0]);
+		value = (((unsigned long)data[2]<<16)|(unsigned long)data[1]<<8|(unsigned long)data[0]);
 		return(1);
 	}
 	value = 0;
