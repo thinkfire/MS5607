@@ -2,19 +2,28 @@
 #include <MS5607.h>
 #include <Wire.h>
 
+void ErrorLoop(void);
+
 MS5607 P_SENS;
 
 void setup() {
   Serial.begin(9600);
   if(!P_SENS.begin()){
     Serial.println("MS5607 failed!");
-    while (1) {
-      Serial.print(".");
-      delay(500);
-    }
+    ErrorLoop();
   }else Serial.println("MS5607 initialise successfully!");
 }
 
 void loop() {
-    // put your main code here, to run repeatedly:
+  if(P_SENS.startMeasurment()){
+    Serial.print(ADC read successful!);
+  }else{ErrorLoop();}
+  delay(5000);
+}
+
+void ErrorLoop(void){
+  while (1) {
+    Serial.print(".");
+    delay(500);
+  }
 }
