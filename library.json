@@ -1,25 +1,29 @@
 {
-  "name": "MS5607",
-  "keywords": "I2C, sensor, pressure",
-  "description": "Arduino Library for MS5607 pressure sensor IC",
-  "repository":
-  {
-    "type": "git",
-    "url": "https://github.com/thinkfire/ms5607.git"
-  },
-  "authors":
-  {
-    "name": "Amit Ate",
-    "email": "amitate007@gmail.com",
-    "maintainer": true
-  },
-  "dependencies":
-  {
-    "name": "Wire Master Reader",
-    "authors": "Nicholas Zambetti",
-    "frameworks": "arduino"
-  },
-  "version": "1.0.0",
-  "frameworks": "arduino",
-  "platforms": "*"
+	"name": "MS5607",
+	"description": "Arduino Library for MS5607 pressure sensor IC",
+	"keywords": "I2C, sensor, pressure",
+
+	"authors": {
+		"name": "Amit Ate",
+		"email": "amitate007@gmail.com",
+		"maintainer": true
+	},
+
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thinkfire/ms5607"
+	},
+
+	"dependencies": {
+		"name": "Wire Master Reader",
+		"authors": "Nicholas Zambetti",
+		"frameworks": "arduino"
+	},
+	"version": "1.0.0",
+	"frameworks": "arduino",
+	"platforms": "*",
+	"examples": [
+		"/Examples/ms5607_test/src/main.cpp"
+	]
 }
+
