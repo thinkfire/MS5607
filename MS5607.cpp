@@ -78,11 +78,9 @@ char MS5607::readBytes(unsigned char *values, char length)
 	char x;
 
 	Wire.beginTransmission(MS5607_ADDR);
-	Wire.write(values[0]);
-  if(length>2){
-    Wire.write(values[1]);
-    Serial.println("readBytes if");
-  }
+  if(length<=2){ Wire.write(values[0]);
+  }else{Wire.write(values[0]+values[1],2);}
+
 	char error = Wire.endTransmission();
 	if (error == 0)
 	{
