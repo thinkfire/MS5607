@@ -55,7 +55,7 @@ char MS5607::readUInt_16(char address, unsigned int &value)
 	return(0);
 }
 
-char MS5607::readUInt_32(char address, unsigned int &value)
+char MS5607::readUInt_32(char address, unsigned long &value)
 {
   unsigned char data[3];	//4bit
 	data[0] = address;
@@ -113,7 +113,7 @@ char MS5607::startMeasurment(void){
 
 
 char MS5607::readDigitalValue(void){
-    if(readUInt_32(CONV_D1, DP) && readUInt_32(CONV_D2, DT)){
+    if(readUInt_32(CONV_D1, &DP) && readUInt_32(CONV_D2, &DT)){
       Serial.println(DP);
       Serial.println(DT);
       return(1);
