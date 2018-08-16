@@ -23,6 +23,9 @@ char MS5607::begin()
 
 char MS5607::readCalibration()
 {
+  if(resetDevice()){
+    retrun(1);
+  }else{return(0);}
   if(
     readUInt(PROM_READ+2, C1) &&
     readUInt(PROM_READ+2*2, C2) &&
@@ -73,4 +76,11 @@ char MS5607::readBytes(unsigned char *values, char length)
 		return(1);
 	}
 	return(0);
+}
+
+char resetDevice(void){
+  Wire.beginTransmission(MS5607_ADDR);
+  if(Wire.write(RESET)){
+    return (1)
+  }else{return(0);}
 }

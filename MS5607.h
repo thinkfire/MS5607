@@ -17,16 +17,13 @@
 class MS5607
 {
   public:
-
     MS5607();
     char begin();
-    //char resetDevice(void);
+    char resetDevice(void);
     //char startMeasurment(void);
 
 
-
   private:
-
     double C1,C2,C3,C4,C5,C6;
 
     char readCalibration();
