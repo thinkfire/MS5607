@@ -61,7 +61,7 @@ char MS5607::readBytes(unsigned char *values, char length)
 
 	Wire.beginTransmission(MS5607_ADDR);
 	Wire.write(values[0]);
-	error = Wire.endTransmission();
+	char error = Wire.endTransmission();
 	if (error == 0)
 	{
 		Wire.requestFrom(MS5607MS5607_ADDR,length);
