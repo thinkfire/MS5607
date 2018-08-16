@@ -25,7 +25,9 @@ char MS5607::readCalibration()
 {
   if(resetDevice()){
     return(1);
+    delay(10);
   }else{return(0);}
+
   if(
     readUInt(PROM_READ+2, C1) &&
     readUInt(PROM_READ+2*2, C2) &&

@@ -6,7 +6,7 @@ MS5607 P_SENS;
 
 void setup() {
   Serial.begin(9600);
-  if(!P_SENS.begin()){
+  if(P_SENS.begin()){
     Serial.println("MS5607 failed!");
     while (1) {
       Serial.print(".");
