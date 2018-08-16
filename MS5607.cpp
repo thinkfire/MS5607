@@ -63,6 +63,7 @@ char MS5607::readUInt_32(char address, unsigned long &value)
   Serial.println("readUInt_32 started");
 	if (readBytes(data,3))
 	{
+    Serial.println("before value readUInt_32");
 		value = (((unsigned long)data[2]<<16)|(unsigned long)data[1]<<8|(unsigned long)data[0]);
     Serial.println("inside readUInt_32");
 		return(1);
@@ -80,6 +81,7 @@ char MS5607::readBytes(unsigned char *values, char length)
 	Wire.write(values[0]);
   if(length>2){
     Wire.write(values[1]);
+    Serial.println("readBytes if");
   }
 	char error = Wire.endTransmission();
 	if (error == 0)
