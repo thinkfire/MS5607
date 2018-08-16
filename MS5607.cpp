@@ -48,13 +48,14 @@ char MS5607::readUInt(char address, double &value)
 	data[0] = address;
 	if (readBytes(data,2))
 	{
-		value = (double)(unsigned int)(((unsigned int)data[1]<<8)|(unsigned int)data[0]);
+		value = (unsigned int)(((unsigned int)data[1]<<8)|(unsigned int)data[0]);
 		return(1);
 	}
 	value = 0;
 	return(0);
 
 }
+
 
 char MS5607::readBytes(unsigned char *values, char length)
 {
@@ -94,4 +95,10 @@ char MS5607::startMeasurment(void){
     delay(10);
     return(1);
   }else{return(0);}
+}
+
+
+char MS5607::readDigitalValue(unsigned long *DP, unsigned long *DT, char length){
+  Wire.beginTransmission(MS5607_ADDR);
+
 }
