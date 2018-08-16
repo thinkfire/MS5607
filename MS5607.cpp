@@ -55,7 +55,7 @@ char MS5607::readUInt_16(char address, unsigned int &value)
 	return(0);
 }
 
-char MS5607::readUInt_32(char address, unsigned long &value)
+char MS5607::readUInt_32(char address, unsigned int &value)
 {
   unsigned char data[3];	//4bit
 	data[0] = address;
