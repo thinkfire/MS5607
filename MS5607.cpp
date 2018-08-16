@@ -79,7 +79,7 @@ char MS5607::readBytes(unsigned char *values, char length)
 
 	Wire.beginTransmission(MS5607_ADDR);
   if(length<=2){ Wire.write(values[0]);
-  }else{Wire.write(values[0]+values[1],2);}
+  }else{Wire.write(values,2);}
 
 	char error = Wire.endTransmission();
 	if (error == 0)
