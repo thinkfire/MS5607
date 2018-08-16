@@ -15,9 +15,9 @@ void setup() {
 }
 
 void loop() {
-  if(P_SENS.startMeasurment()){
-    Serial.println("ADC read successful!");
-  }else{Serial.println("Error in ADC read!");ErrorLoop();}
+  // if(P_SENS.startMeasurment()){
+  //   Serial.println("ADC read successful!");
+  // }else{Serial.println("Error in ADC read!");ErrorLoop();}
 
   if(P_SENS.readDigitalValue()){
     Serial.println("Digital read successful!");
