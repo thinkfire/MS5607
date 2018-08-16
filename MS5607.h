@@ -28,12 +28,11 @@ class MS5607
 
     char readCalibration();
 
-    //char readInt(char address, double &value);
-
     char readUInt(char address, double &value);
 
     char readBytes(unsigned char *values, char length);
 
-    //char writeBytes(unsigned char *values, char length);
+
+
 
 };

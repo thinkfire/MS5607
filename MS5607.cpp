@@ -42,19 +42,33 @@ char MS5607::readCalibration()
   }else{return(0);}
 }
 
-char MS5607::readUInt(char address, double &value)
+char MS5607::readUInt_16(char address, unsigned int &value)
 {
   unsigned char data[2];	//4bit
 	data[0] = address;
 	if (readBytes(data,2))
 	{
-		value = (unsigned int)(((unsigned int)data[1]<<8)|(unsigned int)data[0]);
+		value = (((unsigned int)data[1]<<8)|(unsigned int)data[0]);
 		return(1);
 	}
 	value = 0;
 	return(0);
-
 }
+
+char MS5607::readUInt_32(char address, long &value)
+{
+  unsigned char data[3];	//4bit
+	data[0] = address;
+	if (readBytes(data,3))
+	{
+		value = (((long)data[1]<<8)|(long)data[0]);
+		return(1);
+	}
+	value = 0;
+	return(0);
+}
+
+
 
 
 char MS5607::readBytes(unsigned char *values, char length)
@@ -98,7 +112,11 @@ char MS5607::startMeasurment(void){
 }
 
 
-char MS5607::readDigitalValue(unsigned long *DP, unsigned long *DT, char length){
-  Wire.beginTransmission(MS5607_ADDR);
+char MS5607::readDigitalValue(void){
 
+    if(readUInt_32(CONV_D1, DP) && readUInt_32(CONV_D2, DT)){
+      Serial.println(DP);
+      Serial.println(DT);
+      return(1);
+    }else{return(0);}
 }
