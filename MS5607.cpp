@@ -78,7 +78,7 @@ char MS5607::readBytes(unsigned char *values, char length)
 	return(0);
 }
 
-char resetDevice(void){
+char MS5607::resetDevice(void){
   Wire.beginTransmission(MS5607_ADDR);
   if(Wire.write(RESET)){
     return (1);
