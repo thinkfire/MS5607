@@ -24,12 +24,12 @@ char MS5607::begin()
 char MS5607::readCalibration()
 {
   if(
-    readUInt(PROM_READ+2, C1);
-    readUInt(PROM_READ+2*2, C2);
-    readUInt(PROM_READ+2*3, C3);
-    readUInt(PROM_READ+2*4, C4);
-    readUInt(PROM_READ+2*5, C5);
-    readUInt(PROM_READ+2*6, C6);
+    readUInt(PROM_READ+2, C1) &&
+    readUInt(PROM_READ+2*2, C2) &&
+    readUInt(PROM_READ+2*3, C3) &&
+    readUInt(PROM_READ+2*4, C4) &&
+    readUInt(PROM_READ+2*5, C5) &&
+    readUInt(PROM_READ+2*6, C6) &&
   ){
     Serial.println(C1,2);
     Serial.println(C2,2);
