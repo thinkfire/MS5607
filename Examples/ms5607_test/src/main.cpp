@@ -10,6 +10,7 @@ void setup() {
     Serial.println("MS5607 failed!");
     while (1) {
       Serial.print(".");
+      delay(500);
     }
   }else Serial.println("MS5607 initialise successfully!");
 }
