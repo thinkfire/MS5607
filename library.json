@@ -5,13 +5,13 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/thinkfire/ms5607.git",
+    "url": "https://github.com/thinkfire/ms5607.git"
   },
   "authors":
   {
     "name": "Amit Ate",
     "email": "amitate007@gmail.com",
-    "maintainer": true,
+    "maintainer": true
   },
   "dependencies":
   {
