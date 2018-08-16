@@ -3,6 +3,7 @@
   TE Connectivity sensor pressure sensor MS5607 library for the Arduino microcontroller
   this library used I2C bus.
 */
+#define MS5607_ADDR 0X76
 #define PROM_READ  0xA0
 #define RESET  0x1E
 #define CONV_D1  0x40 //OSR = 256 //calculation time = 0.60 ms
