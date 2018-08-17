@@ -133,7 +133,7 @@ char MS5607::writeBytes(unsigned char *values, char length)
 {
 	Wire.beginTransmission(MS5607_ADDR);
 	Wire.write(values,length);
-	error = Wire.endTransmission();
+	char error = Wire.endTransmission();
 	if (error == 0)
 		return(1);
 	else
