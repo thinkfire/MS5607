@@ -21,7 +21,7 @@ class MS5607
     char begin();
     char getTemperature(void);
     char getPressure(void);
-    char readDigitalValue(void);
+    char getDigitalValue(void);
 
 
   private:
