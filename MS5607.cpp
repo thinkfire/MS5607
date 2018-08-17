@@ -131,7 +131,7 @@ char MS5607::readDigitalValue(void){
 
 char BMP280::writeBytes(unsigned char *values, char length)
 {
-	Wire.beginTransmission(BMP280_ADDR);
+	Wire.beginTransmission(MS5607_ADDR);
 	Wire.write(values,length);
 	error = Wire.endTransmission();
 	if (error == 0)
