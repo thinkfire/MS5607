@@ -1,7 +1,6 @@
 #include <Arduino.h>
 #include <MS5607.h>
 #include <Wire.h>
-
 void ErrorLoop(void);
 
 MS5607 P_SENS;
@@ -15,20 +14,8 @@ void setup() {
 }
 
 void loop() {
-  // if(P_SENS.startMeasurment()){
-  //   Serial.println("ADC read successful!");
-  // }else{Serial.println("Error in ADC read!");ErrorLoop();}
 
-  if(P_SENS.readDigitalValue()){
-    Serial.println("Digital read successful!");
-  }else{Serial.println("Error in digital read!");ErrorLoop();}
-
+  Serial.println("Pressure    - "+String(P_SENS.getPressure())+" mbar");
+  Serial.println("Temperature - "+String(P_SENS.getTemperature())+" C");
   delay(5000);
-}
-
-void ErrorLoop(void){
-  while (1) {
-    Serial.print(".");
-    delay(500);
-  }
 }
