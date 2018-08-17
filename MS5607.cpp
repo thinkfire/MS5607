@@ -164,5 +164,3 @@ char MS5607::readDigitalValue(unsigned long &value){
     value = (unsigned long)data[2]*1<<16|(unsigned long)data[1]*1<<8|(unsigned long)data[0];
     return(1);
   }
-  return(0);
-}
