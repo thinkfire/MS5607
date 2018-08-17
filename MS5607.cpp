@@ -78,12 +78,6 @@ char MS5607::readBytes(unsigned char *values, char length)
 
 	Wire.beginTransmission(MS5607_ADDR);
   Wire.write(values[0]);
-  if(length>2){
-    delay(20);
-    Wire.endTransmission();
-    startMeasurment();
-    Serial.println("measurements started");
-  }
 
 	char error = Wire.endTransmission();
 	if (error == 0)
@@ -121,9 +115,35 @@ char MS5607::startMeasurment(void){
 
 
 char MS5607::readDigitalValue(void){
-    if(readUInt_32(CONV_D1, DP) && readUInt_32(CONV_D2, DT)){
-      Serial.println(DP);
-      Serial.println(DT);
-      return(1);
-    }else{return(0);}
+    // if(readUInt_32(CONV_D1, DP) && readUInt_32(CONV_D2, DT)){
+    //   Serial.println(DP);
+    //   Serial.println(DT);
+    //   return(1);
+    // }else{return(0);}
+    unsigned char data [2];
+    data [0] = CONV_D1;
+    data [1] = R_ADC;
+
+    if(writeBytes(data,2)){
+      return 1;
+    }else{return 0;}
+}
+
+char BMP280::writeBytes(unsigned char *values, char length)
+{
+	Wire.beginTransmission(BMP280_ADDR);
+	Wire.write(values,length);
+	error = Wire.endTransmission();
+	if (error == 0)
+		return(1);
+	else
+		return(0);
+}
+
+char MS5607::getTemperature(void){
+  return 1;
+}
+
+char MS5607::getPressure(void){
+  return 1;
 }
