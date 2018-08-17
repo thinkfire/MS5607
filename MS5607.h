@@ -32,11 +32,13 @@ class MS5607
 
     char readCalibration();
     char resetDevice(void);
+    char readDigitalValue(unsigned long &value);
     char startMeasurment(void);
     //char readDigitalValue(void);
     char readUInt_16(char address, unsigned int &value);
     char readUInt_32(char address, unsigned long &value);
     char readBytes(unsigned char *values, char length);
     char writeBytes(unsigned char *values, char length);
+
 
 };
