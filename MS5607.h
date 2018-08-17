@@ -21,6 +21,7 @@ class MS5607
     char begin();
     char getTemperature(void);
     char getPressure(void);
+    char readDigitalValue(void);
 
 
   private:
@@ -32,7 +33,7 @@ class MS5607
     char readCalibration();
     char resetDevice(void);
     char startMeasurment(void);
-    char readDigitalValue(void);
+    //char readDigitalValue(void);
     char readUInt_16(char address, unsigned int &value);
     char readUInt_32(char address, unsigned long &value);
     char readBytes(unsigned char *values, char length);
