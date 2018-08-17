@@ -114,7 +114,7 @@ char MS5607::startMeasurment(void){
 }
 
 
-char MS5607::readDigitalValue(void){
+char MS5607::getDigitalValue(void){
     // if(readUInt_32(CONV_D1, DP) && readUInt_32(CONV_D2, DT)){
     //   Serial.println(DP);
     //   Serial.println(DT);
@@ -125,6 +125,9 @@ char MS5607::readDigitalValue(void){
     data [1] = R_ADC;
 
     if(writeBytes(data,2)){
+      delay(10);
+      readDigitalValue(DP);
+      Serial.println(DP);
       return 1;
     }else{return 0;}
 }
@@ -146,4 +149,19 @@ char MS5607::getTemperature(void){
 
 char MS5607::getPressure(void){
   return 1;
+}
+
+char MS5607::readDigitalValue(unsigned long &value){
+  char x, length = 3;
+  unsigned char data[3];
+    Wire.requestFrom(MS5607_ADDR,length);
+    while(!Wire.available()) ; // wait until bytes are ready
+    for(x=0;x<length;x++)
+    {
+      data[x] = Wire.read();
+    }
+    value = (unsigned long)data[2]*1<<16|(unsigned long)data[1]*1<<8|(unsigned long)data[0];
+    return(1);
+  }
+  return(0);
 }
