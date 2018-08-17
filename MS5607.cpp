@@ -126,9 +126,10 @@ char MS5607::getDigitalValue(void){
 
     if(writeBytes(data,2)){
       delay(10);
-      readDigitalValue(DP);
-      Serial.println(DP);
-      return 1;
+      if(readDigitalValue(DP)){
+          Serial.println(DP);
+          return 1;
+      }
     }else{return 0;}
 }
 
