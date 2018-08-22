@@ -58,23 +58,23 @@ char MS5607::readCalibration(){
     #endif
 
     const1 = ((float)C5)*((int)1<<8);
-    Serial.print("const1 - ");
-    Serial.println(const1);
+    // Serial.print("const1 - ");
+    // Serial.println(const1);
     const2 = ((float)C6)/(float)((long)1<<23);
-    Serial.print("const2 - ");
-    Serial.println(const2,4);
+    // Serial.print("const2 - ");
+    // Serial.println(const2,4);
     const3 = (((int64_t)C2)*((long)1<<17));
-    Serial.print("const3 - ");
-    Serial.println(ToString(const3));
+    // Serial.print("const3 - ");
+    // Serial.println(ToString(const3));
     const4 = ((float)C4)/((int)1<<6);
-    Serial.print("const4 - ");
-    Serial.println(const4);
+    // Serial.print("const4 - ");
+    // Serial.println(const4);
     const5 = ((float)C1)*((long)1<<16);
-    Serial.print("const5 - ");
-    Serial.println(const5);
+    // Serial.print("const5 - ");
+    // Serial.println(const5);
     const6 = ((float)C3)/((int)1<<7);
-    Serial.print("const6 - ");
-    Serial.println(const6);
+    // Serial.print("const6 - ");
+    // Serial.println(const6);
     return (1);
   }else{return(0);}
 }

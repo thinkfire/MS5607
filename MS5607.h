@@ -24,7 +24,8 @@ class MS5607
     char begin();
     float getTemperature(void);
     float getPressure(void);
-    
+    char getDigitalValue(void);
+
   private:
     unsigned int C1,C2,C3,C4,C5,C6;
     unsigned long DP, DT;
@@ -39,7 +40,6 @@ class MS5607
     char readBytes(unsigned char *values, char length);
     char startConversion(char CMD);
     char startMeasurment(void);
-    char getDigitalValue(void);
     char readDigitalValue(unsigned long &value);
     String ToString(uint64_t x);
 
